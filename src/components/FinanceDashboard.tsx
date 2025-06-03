@@ -74,7 +74,7 @@ const FinanceDashboard = () => {
     <div className="container mx-auto p-6 max-w-7xl">
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-slate-800 mb-2 font-montserrat">
-          Финансовый трекер
+          Финансовый трекер для ГеооООра!
         </h1>
         <p className="text-slate-600 text-lg">
           Управляйте своими финансами с умом
