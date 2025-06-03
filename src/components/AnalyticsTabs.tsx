@@ -115,49 +115,59 @@ const AnalyticsTabs = ({ transactions }) => {
             </TabsList>
 
             <TabsContent value="week" className="mt-6">
-              <div className="h-80">
-                <ChartContainer config={chartConfig}>
-                  <BarChart data={chartData}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Bar
-                      dataKey="income"
-                      fill="var(--color-income)"
-                      name="Доходы"
-                    />
-                    <Bar
-                      dataKey="expenses"
-                      fill="var(--color-expenses)"
-                      name="Расходы"
-                    />
-                  </BarChart>
+              <div className="h-80 w-full">
+                <ChartContainer config={chartConfig} className="h-full w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={chartData}
+                      margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                    >
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Bar
+                        dataKey="income"
+                        fill="var(--color-income)"
+                        name="Доходы"
+                      />
+                      <Bar
+                        dataKey="expenses"
+                        fill="var(--color-expenses)"
+                        name="Расходы"
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
                 </ChartContainer>
               </div>
             </TabsContent>
 
             <TabsContent value="month" className="mt-6">
-              <div className="h-80">
-                <ChartContainer config={chartConfig}>
-                  <LineChart data={chartData}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line
-                      type="monotone"
-                      dataKey="income"
-                      stroke="var(--color-income)"
-                      name="Доходы"
-                      strokeWidth={2}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="expenses"
-                      stroke="var(--color-expenses)"
-                      name="Расходы"
-                      strokeWidth={2}
-                    />
-                  </LineChart>
+              <div className="h-80 w-full">
+                <ChartContainer config={chartConfig} className="h-full w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      data={chartData}
+                      margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                    >
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <Line
+                        type="monotone"
+                        dataKey="income"
+                        stroke="var(--color-income)"
+                        name="Доходы"
+                        strokeWidth={2}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="expenses"
+                        stroke="var(--color-expenses)"
+                        name="Расходы"
+                        strokeWidth={2}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
                 </ChartContainer>
               </div>
             </TabsContent>
